@@ -1,8 +1,9 @@
-import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
-import { Link } from 'react-router-dom';
-const MovieCard = ({ id, title, posterUrl, description }) => {
-	return (
-		<div className='col-4 mt-2'>
+import React, { Component } from 'react'
+
+export class Movie extends Component {
+    render() {
+        return (
+            <div className='col-4 mt-2'>
 			<Card style={{ height: `500px` }}>
 				<CardTitle>
 					<div className='row justify-content-center mt-2'>
@@ -22,11 +23,12 @@ const MovieCard = ({ id, title, posterUrl, description }) => {
 					</div>
 				</CardBody>
 				<div>
-					<Link to={'/movie/' + id}>Movie Details</Link>
+					<Link to={'/movie/' + id}>Go back to Movies List...</Link>
 				</div>
 			</Card>
 		</div>
-	);
-};
+        )
+    }
+}
 
-export default MovieCard;
+export default Movie
